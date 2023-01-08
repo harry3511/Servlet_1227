@@ -3,6 +3,7 @@ package com.seungmin.servlet.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,12 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 public class Ex05Controller extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
 		
-		// 이름과 생년월을 전달 받고, 이름과 나이를 html구성
+		// 이름과 생년월을 전달 받고, 이름과 나이를 html로 구성
 				String name = request.getParameter("name");
 				String birthday = request.getParameter("birthday");
 				
